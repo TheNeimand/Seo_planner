@@ -445,9 +445,14 @@ class MainWindow(QMainWindow):
 
     def _save_cache(self):
         """Save site data to cache."""
+        site = self._get_active_site()
+        if not site:
+            return
+        
         try:
-            self.site_data.save_to_file(str(CACHE_FILE))
-            logger.info("Cache saved.")
+            cache_path = DATA_DIR / f"site_cache_{site['id']}.json"
+            self.site_data.save_to_file(str(cache_path))
+            logger.info(f"Cache saved for site: {site['name']}")
         except Exception as e:
             logger.error(f"Cache save failed: {e}")
 

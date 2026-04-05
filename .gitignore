@@ -1,0 +1,29 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+env/
+venv/
+.venv/
+pip-log.txt
+pip-delete-this-directory.txt
+.tox/
+.coverage
+.cache
+nosetests.xml
+coverage.xml
+*,cover
+.hypothesis/
+
+# SEO Planner Data (Private)
+data/*.json
+data/*.log
+
+# Google Credentials (Private)
+gen-lang-client-*.json
+
+# OS files
+.DS_Store
+Thumbs.db
